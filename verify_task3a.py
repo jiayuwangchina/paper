@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Exact-arithmetic audit of the four requested Task 3A checks.
 
-[author confirmation needed] All computations are NEW research-audit material,
+ All computations are NEW research-audit material,
 not manuscript text and not a verification of the complete NP-completeness proof.
 
 Source: Main_Manuscript_Econometrica(2).pdf, 12 September 2026.
@@ -20,7 +20,7 @@ from fractions import Fraction as F
 from itertools import combinations, product
 from pathlib import Path
 
-STATUS = "[author confirmation needed]"
+STATUS = "Confirmed"
 SUPPORT = ("100", "110", "010", "011", "001", "101")
 EXPECTED_CORE = {
     "100": (3, 2, 1), "110": (3, 2, 1),
@@ -52,7 +52,7 @@ def pair(a: int) -> tuple[int, int]:
 
 
 def primitive_data(k: int):
-    """[author confirmation needed] Transcribe Section 5 for k source sets.
+    """Transcribe Section 5 for k source sets.
 
     k=0 is used only for computing the three-worker core by itself.
     """
@@ -81,7 +81,7 @@ def utility_table(k: int, bits: str) -> dict[int, dict[int, F]]:
 
 
 def ttc(table: dict[int, dict[int, F]]):
-    """[author confirmation needed] Run TTC directly from rational utilities.
+    """ Run TTC directly from rational utilities.
 
     Workers initially own equally numbered contracts. Execute all directed cycles
     in each round; remove their workers and endowed contracts simultaneously.
@@ -118,7 +118,7 @@ def block(i: int) -> int:
 
 
 def fiscal_matrices(L: int, sets: tuple[frozenset[int], ...]):
-    """[author confirmation needed] Build the full original cost matrices.
+    """Build the full original cost matrices.
 
     Zero-based Python arrays; worker and contract IDs elsewhere remain one-based.
     """
@@ -163,7 +163,7 @@ def run_audit(max_k_ttc: int = 12) -> dict:
     # The fiscal checks below reuse TTC outcomes for k=1,2,3.
     require(max_k_ttc >= 3, "max_k_ttc must be at least 3")
 
-    # [author confirmation needed] Check rankings and TTC without using Table II.
+    #  Check rankings and TTC without using Table II.
     outcomes, traces = {}, {}
     for bits in SUPPORT:
         table = utility_table(0, bits)
@@ -175,7 +175,7 @@ def run_audit(max_k_ttc: int = 12) -> dict:
                 f"Unexpected actual TTC outcome at {bits}")
         outcomes[bits], traces[bits] = allocation, rounds
 
-    # [author confirmation needed] Enumerate all supported unilateral edges.
+    #  Enumerate all supported unilateral edges.
     edges, strict, equality = [], 0, 0
     adjacency = {m: set() for m in SUPPORT}
     for m, other in combinations(SUPPORT, 2):
@@ -212,7 +212,7 @@ def run_audit(max_k_ttc: int = 12) -> dict:
             == {1, 2, 3}, "A strategically active worker lacks a nonconstant supported edge")
     require((strict, equality) == (6, 6), "Unexpected strict/equality comparison count")
 
-    # [author confirmation needed] Include ALL auxiliary workers in TTC for k=1,...,12.
+    # Include ALL auxiliary workers in TTC for k=1,...,12.
     full_outcomes = {}
     full_runs = 0
     for k in range(1, max_k_ttc + 1):
@@ -229,7 +229,7 @@ def run_audit(max_k_ttc: int = 12) -> dict:
             full_outcomes[k, bits] = allocation
             full_runs += 1
 
-    # [author confirmation needed] Exhaust all small ordered set families.
+    #  Exhaust all small ordered set families.
     # Repeated nonempty source sets and uncovered elements are allowed.
     instances = supported_rows = matrix_checks = yes = no = uncovered = 0
     for L in range(1, 4):
@@ -286,7 +286,7 @@ def run_audit(max_k_ttc: int = 12) -> dict:
                           "all_residuals_exactly_zero": True},
         "off_support_diagnostic_only": {"actual_core_ttc": off_support_ttc,
               "note": "Table II is an extension, not TTC on all eight profiles. At 111 TTC is C-minus; Table II uses C-plus."},
-        "all_four_requested_checks": "PASS, subject to author confirmation",
+        "all_four_requested_checks": "PASS",
     }
 
 
