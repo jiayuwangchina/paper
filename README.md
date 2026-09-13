@@ -25,7 +25,7 @@ To record an optional provenance hash (the PDF is read only for the hash):
 python verify_task3a.py --output task3a_audit.json --source-pdf "Main_Manuscript_Econometrica(2).pdf"
 ```
 
-## Findings -- [author confirmation needed]
+## Findings 
 
 1. Actual TTC gives core allocations (13) at 100/110, (12) at 010/011,
    and (23) at 001/101. Every selection and balancing pair swaps.
@@ -39,7 +39,7 @@ python verify_task3a.py --output task3a_audit.json --source-pdf "Main_Manuscript
    indicators equal to one. All block, synchronization, and element-coordinate
    residuals are zero. Equation (20) reduces to 0-H_ell+H_ell=0.
 
-## Exact finite checks -- [author confirmation needed]
+## Exact finite checks
 
 - All six core TTC profiles computed from exact rational utilities.
 - Full economies with k=1,...,12: 72 supported-profile TTC runs; all pairs swap.
