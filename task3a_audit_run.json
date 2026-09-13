@@ -1,0 +1,322 @@
+{
+  "status": "[author confirmation needed]",
+  "scope": "Four requested checks only; no manuscript changes; not a complete hardness proof audit.",
+  "arithmetic": "Exact fractions and integers; no random sampling.",
+  "support": [
+    "100",
+    "110",
+    "010",
+    "011",
+    "001",
+    "101"
+  ],
+  "actual_core_ttc": {
+    "100": [
+      3,
+      2,
+      1
+    ],
+    "110": [
+      3,
+      2,
+      1
+    ],
+    "010": [
+      2,
+      1,
+      3
+    ],
+    "011": [
+      2,
+      1,
+      3
+    ],
+    "001": [
+      1,
+      3,
+      2
+    ],
+    "101": [
+      1,
+      3,
+      2
+    ]
+  },
+  "core_ttc_rounds": {
+    "100": [
+      {
+        "pointers": {
+          "1": 3,
+          "2": 3,
+          "3": 1
+        },
+        "cycles": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "pointers": {
+          "2": 2
+        },
+        "cycles": [
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "110": [
+      {
+        "pointers": {
+          "1": 3,
+          "2": 1,
+          "3": 1
+        },
+        "cycles": [
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      {
+        "pointers": {
+          "2": 2
+        },
+        "cycles": [
+          [
+            2
+          ]
+        ]
+      }
+    ],
+    "010": [
+      {
+        "pointers": {
+          "1": 2,
+          "2": 1,
+          "3": 1
+        },
+        "cycles": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "pointers": {
+          "3": 3
+        },
+        "cycles": [
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "011": [
+      {
+        "pointers": {
+          "1": 2,
+          "2": 1,
+          "3": 2
+        },
+        "cycles": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "pointers": {
+          "3": 3
+        },
+        "cycles": [
+          [
+            3
+          ]
+        ]
+      }
+    ],
+    "001": [
+      {
+        "pointers": {
+          "1": 2,
+          "2": 3,
+          "3": 2
+        },
+        "cycles": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "pointers": {
+          "1": 1
+        },
+        "cycles": [
+          [
+            1
+          ]
+        ]
+      }
+    ],
+    "101": [
+      {
+        "pointers": {
+          "1": 3,
+          "2": 3,
+          "3": 2
+        },
+        "cycles": [
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      {
+        "pointers": {
+          "1": 1
+        },
+        "cycles": [
+          [
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "supported_edges": [
+    {
+      "worker": 1,
+      "bit0_profile": "001",
+      "bit1_profile": "101",
+      "own_contract_bit0": 1,
+      "own_contract_bit1": 1,
+      "bit0_truthful_utility": "-121/50",
+      "bit0_deviation_utility": "-121/50",
+      "bit1_truthful_utility": "-98/25",
+      "bit1_deviation_utility": "-98/25",
+      "bit0_surplus": "0",
+      "bit1_surplus": "0"
+    },
+    {
+      "worker": 1,
+      "bit0_profile": "010",
+      "bit1_profile": "110",
+      "own_contract_bit0": 2,
+      "own_contract_bit1": 3,
+      "bit0_truthful_utility": "-51/50",
+      "bit0_deviation_utility": "-81/50",
+      "bit1_truthful_utility": "-18/25",
+      "bit1_deviation_utility": "-33/25",
+      "bit0_surplus": "3/5",
+      "bit1_surplus": "3/5"
+    },
+    {
+      "worker": 2,
+      "bit0_profile": "001",
+      "bit1_profile": "011",
+      "own_contract_bit0": 3,
+      "own_contract_bit1": 1,
+      "bit0_truthful_utility": "-81/400",
+      "bit0_deviation_utility": "-121/400",
+      "bit1_truthful_utility": "-81/400",
+      "bit1_deviation_utility": "-121/400",
+      "bit0_surplus": "1/10",
+      "bit1_surplus": "1/10"
+    },
+    {
+      "worker": 2,
+      "bit0_profile": "100",
+      "bit1_profile": "110",
+      "own_contract_bit0": 2,
+      "own_contract_bit1": 2,
+      "bit0_truthful_utility": "-401/400",
+      "bit0_deviation_utility": "-401/400",
+      "bit1_truthful_utility": "-401/400",
+      "bit1_deviation_utility": "-401/400",
+      "bit0_surplus": "0",
+      "bit1_surplus": "0"
+    },
+    {
+      "worker": 3,
+      "bit0_profile": "010",
+      "bit1_profile": "011",
+      "own_contract_bit0": 3,
+      "own_contract_bit1": 3,
+      "bit0_truthful_utility": "-98/25",
+      "bit0_deviation_utility": "-98/25",
+      "bit1_truthful_utility": "-121/50",
+      "bit1_deviation_utility": "-121/50",
+      "bit0_surplus": "0",
+      "bit1_surplus": "0"
+    },
+    {
+      "worker": 3,
+      "bit0_profile": "100",
+      "bit1_profile": "101",
+      "own_contract_bit0": 1,
+      "own_contract_bit1": 2,
+      "bit0_truthful_utility": "-18/25",
+      "bit0_deviation_utility": "-33/25",
+      "bit1_truthful_utility": "-51/50",
+      "bit1_deviation_utility": "-81/50",
+      "bit0_surplus": "3/5",
+      "bit1_surplus": "3/5"
+    }
+  ],
+  "connected": true,
+  "directed_supported_comparisons": {
+    "strict": 6,
+    "equality": 6,
+    "negative": 0
+  },
+  "full_ttc_checks": {
+    "k_min": 1,
+    "k_max": 12,
+    "supported_profile_runs": 72,
+    "all_auxiliary_pairs_swap": true
+  },
+  "fiscal_checks": {
+    "L_range": [
+      1,
+      3
+    ],
+    "k_range": [
+      1,
+      3
+    ],
+    "ordered_set_families": 441,
+    "YES_families": 279,
+    "NO_families": 162,
+    "families_with_uncovered_elements": 114,
+    "supported_assignment_checks": 2646,
+    "full_cost_matrix_residual_checks": 15120,
+    "all_residuals_exactly_zero": true
+  },
+  "off_support_diagnostic_only": {
+    "actual_core_ttc": {
+      "000": [
+        2,
+        3,
+        1
+      ],
+      "111": [
+        3,
+        1,
+        2
+      ]
+    },
+    "note": "Table II is an extension, not TTC on all eight profiles. At 111 TTC is C-minus; Table II uses C-plus."
+  },
+  "all_four_requested_checks": "PASS, subject to author confirmation"
+}
