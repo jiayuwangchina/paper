@@ -160,6 +160,9 @@ def has_exact_cover(L: int, sets: tuple[frozenset[int], ...]) -> bool:
 
 
 def run_audit(max_k_ttc: int = 12) -> dict:
+    # The fiscal checks below reuse TTC outcomes for k=1,2,3.
+    require(max_k_ttc >= 3, "max_k_ttc must be at least 3")
+
     # [author confirmation needed] Check rankings and TTC without using Table II.
     outcomes, traces = {}, {}
     for bits in SUPPORT:
@@ -292,10 +295,17 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=Path("task3a_audit.json"))
     parser.add_argument("--source-pdf", type=Path, help="Optional provenance hash; no PDF parsing or alteration")
     args = parser.parse_args()
-    report = run_audit()
     if args.source_pdf is not None:
         if not args.source_pdf.is_file():
             raise FileNotFoundError(args.source_pdf)
+        output_is_source = args.output.resolve() == args.source_pdf.resolve()
+        if args.output.exists():
+            output_is_source = output_is_source or args.output.samefile(args.source_pdf)
+        if output_is_source:
+            parser.error("--output must not refer to the --source-pdf file")
+
+    report = run_audit()
+    if args.source_pdf is not None:
         report["source"] = {"filename": args.source_pdf.name,
                             "sha256": hashlib.sha256(args.source_pdf.read_bytes()).hexdigest()}
     args.output.parent.mkdir(parents=True, exist_ok=True)
