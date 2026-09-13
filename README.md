@@ -1,6 +1,6 @@
 # Task 3A: targeted four-check audit
 
-**[author confirmation needed]** This is new research-audit material, not
+ This is new research-audit material, not
 replacement manuscript text and not a verification of the complete strengthened
 NP-completeness argument. No manuscript file is changed by the script.
 
@@ -53,7 +53,7 @@ python verify_task3a.py --output task3a_audit.json --source-pdf "Main_Manuscript
 The finite checks are not a proof for all source-instance sizes. The accompanying
 response gives the algebraic cancellation and the TTC separation reasoning.
 
-## Important diagnostic -- [author confirmation needed]
+## Important diagnostic 
 
 At 111 actual TTC is C-minus=(132), whereas Table II selects C-plus=(123).
 There is no conflict: Table II is a DSIC extension, not an assertion that it equals
